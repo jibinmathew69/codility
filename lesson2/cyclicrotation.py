@@ -40,7 +40,6 @@ In your solution, focus on correctness. The performance of your solution will no
 This is something similar to classic cylic queue
 """
 
-
 def solution(A, K):
     length = len(A)
     B = [0] * length
