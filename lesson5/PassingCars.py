@@ -39,20 +39,37 @@ N is an integer within the range [1..100,000];
 each element of array A is an integer that can have one of the following values: 0, 1.
 
 '''
+#
+# def solution(A):
+#
+#     count = 0
+#
+#     length = len(A)
+#     for i in range(length):
+#
+#         if A[i] == 0:
+#             for j in range(i+1,length):
+#                 if A[j] == 1:
+#                     count+=1
+#
+#     if count > 1000000000:
+#         return -1
+#
+#     return count
+
 
 def solution(A):
 
-    count = 0
+    zeroesCount = 0
+    pairs = 0
 
-    length = len(A)
-    for i in range(length):
-
+    for  i in range(len(A)):
         if A[i] == 0:
-            for j in range(i+1,length):
-                if A[j] == 1:
-                    count+=1
+            zeroesCount += 1
+        else:
+            pairs+=zeroesCount
 
-    if count > 1000000000:
-        return -1
+        if pairs>1000000000:
+            return -1
 
-    return count
+    return pairs
